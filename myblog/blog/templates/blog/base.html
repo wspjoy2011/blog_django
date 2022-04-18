@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 </head>
 <body>
+{% if request.user.is_authenticated %}
+    User: <b>{{ user.username }}</b>
+{% endif %}
 <div id="content">
     {% block content %}
     {% endblock %}
